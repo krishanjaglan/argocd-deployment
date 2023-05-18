@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault-server-cpm
+  namespace: vault-server-cpm
+spec:
+  project: default
+  source:
+    chart: hashicorp/vault
+    repoURL: https://helm.releases.hashicorp.com
+    targetRevision: 0.24.0
+    helm:
+      releaseName: hashicorp/vault
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: Default
