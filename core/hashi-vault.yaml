@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: vault-server-cpm
-  namespace: Default
+  namespace: default
 spec:
   project: default
   source:
